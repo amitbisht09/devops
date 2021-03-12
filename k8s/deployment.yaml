@@ -1,0 +1,64 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: front
+  name: front-app-deploy
+  namespace: myapp
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: front
+  template:
+    metadata:
+      labels:
+        app: front
+    serviceAccountName: restricted-sa
+    spec:
+      container:
+      - name: frontapp
+        image: acr.io/frontend-app:v1
+        ports:
+        - containerPort: 8080
+        readiness:
+          httpGet:
+            path: /
+            port: 8080
+            initialDelaySeconds: 90
+            periodSeconds: 10
+            successThreshold: 1
+            failureThreshold: 3
+        liveliness:
+          httpGet:
+            path: /
+            port: 8080
+            initialDelaySeconds: 90
+            periodSeconds: 10
+            successThreshold: 1
+            failureThreshold: 3
+        resources:
+          requests:
+            cpu: "1"
+            memory: 1Gi
+          limits:
+            cpu: "2"
+            memory: 2Gi
+        env:
+        - name: MAX_WORKER
+          value: 30
+        - name: CONF_DIR
+          value: /app/frontApp/conf.d/
+        - name: API_URL
+          valueFrom:
+            configMapRef:
+              name: app-config
+              key: APP_URL
+        - name: DB_URL
+          valueFrom:
+            secretKeyRef:
+              name: app-secret
+              key: DB_URI
+        envFrom:
+        - configMapRef:
+            name: common-conf

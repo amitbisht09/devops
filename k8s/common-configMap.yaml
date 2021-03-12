@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: configMap
+metadata:
+  name: common-conf
+  namespace: myapp
+data:
+  PROXY_URL: "https://proxy-usa.myapp.com"
+  ORGANISATION: "abc"
+  EAST_DC: "us-east1"
+  WEST_DC: "us-west1"
