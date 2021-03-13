@@ -4,7 +4,6 @@ Most of the cloud providers offer a cloud shell that comes up with inbuilt kubec
 GKE - https://cloud.google.com/kubernetes-engine/docs/how-to/creating-a-zonal-cluster#console  
 AKS - https://docs.microsoft.com/en-us/azure/aks/kubernetes-walkthrough-portal  
 EKS - https://docs.aws.amazon.com/eks/latest/userguide/create-cluster.html    
->>>>>>> 4786d2404f631de3f680c0c04d1b16489da36d0a
 
 1. Create a namespace for your application  
 	_kubectl apply -f namespace.yaml_
