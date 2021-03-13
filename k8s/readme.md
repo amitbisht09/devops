@@ -1,11 +1,6 @@
 This project is intended for Cloud hosted Kubernetes Engines such as Google Kubernetes Engine (GKE), Azure Kuberentes Services (AKS), Amazon Elastic Kubernetes Service (EKS).
 Most of the cloud providers offer a cloud shell that comes up with inbuilt kubectl binaries. Once you authenticate to your cloud account, run below kubectl commands to deploy the kubernetes resources.
 
-<<<<<<< HEAD
-GKE - https://cloud.google.com/kubernetes-engine/docs/how-to/creating-a-zonal-cluster#console
-AKS - https://docs.microsoft.com/en-us/azure/aks/kubernetes-walkthrough-portal
-EKS - https://docs.aws.amazon.com/eks/latest/userguide/create-cluster.html
-=======
 GKE - https://cloud.google.com/kubernetes-engine/docs/how-to/creating-a-zonal-cluster#console  
 AKS - https://docs.microsoft.com/en-us/azure/aks/kubernetes-walkthrough-portal  
 EKS - https://docs.aws.amazon.com/eks/latest/userguide/create-cluster.html    
