@@ -19,7 +19,7 @@ EKS - https://docs.aws.amazon.com/eks/latest/userguide/create-cluster.html
     _kubectl apply -f deployment.yaml_
 6. Create the service for exposing pods to the cluster.  
     _kubectl apply -f service.yaml_
-7. Create a default GCE Ingress resource.
+7. Create a default GCE Ingress resource.  
 		_kubectl apply -f ingress-rule.yaml_
 
 More details on different Ingress controllers can be found at:  
